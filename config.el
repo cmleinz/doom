@@ -74,16 +74,21 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(map! :after evil :map (evil-normal-state-map evil-visual-state-map) :prefix "g" :desc "Goto line start" "h" #'evil-beginning-of-line)
-(map! :after evil :map (evil-normal-state-map evil-visual-state-map) :prefix "g" :desc "Goto line end" "l" #'evil-end-of-line)
-(map! :after evil :map (evil-normal-state-map evil-visual-state-map) :prefix "g" :desc "Goto last file" "a" #'evil-switch-to-windows-last-buffer)
-(map! :after evil :map (evil-normal-state-map evil-visual-state-map) :prefix "g" :desc "Goto last line" "e" #'end-of-buffer)
-(map! :after evil :map (evil-normal-state-map evil-visual-state-map) "C" #'evil-mc-make-cursor-move-next-line)
+(map! (:after evil
+       :nv "C" #'evil-mc-make-cursor-move-next-line))
+
+(map! (:after evil
+              (:prefix "g"
+               :nv "h" #'evil-beginning-of-line
+               :nv "l" #'evil-end-of-line
+               :nv "a" #'evil-switch-to-windows-last-buffer
+               :nv "e" #'end-of-buffer)))
 
 (map! :leader
       :after evil
-      :map evil-motion-state-map
+      :nv "k" #'lsp-ui-doc-show)
+
+(map! :leader
+      :after evil
       :prefix "w"
-      :desc "Goto line start"
-      "o" #'delete-other-windows
-      )
+      :nv "o" #'delete-other-windows)

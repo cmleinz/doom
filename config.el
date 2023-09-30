@@ -74,6 +74,8 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(load! "neotree.el")
+
 (map! (:after evil
        :nv "C" #'evil-mc-make-cursor-move-next-line))
 
@@ -86,7 +88,9 @@
 
 (map! :leader
       :after evil
-      :nv "k" #'lsp-ui-doc-show)
+      :nv "k" #'lsp-ui-doc-show
+      :nv "d" #'neotree-toggle
+      :nv "x" #'counsel-M-x)
 
 (map! :leader
       :after evil

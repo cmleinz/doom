@@ -1,9 +1,11 @@
 ;;; ../../git/doom/neotree.el -*- lexical-binding: t; -*-
 
 (use-package! neotree
+  :init
   :config
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-  (setq projectile-switch-project-action 'neotree-projectile-action))
+  (setq projectile-switch-project-action 'neotree-projectile-action)
+  (setq doom-themes-neotree-file-icons t))
 
 ;; Autohide neotree when opening a file
 

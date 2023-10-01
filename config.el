@@ -21,7 +21,6 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "Comic Code Ligatures" :size 14))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -31,13 +30,10 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-gruvbox)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type 'relative)
 
-(setq scroll-margin 7)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -76,25 +72,22 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;; Keybindings
+(load! "keys.el")
+
 (load! "neotree.el")
 
-(map! (:after evil
-       :nv "C" #'evil-mc-make-cursor-move-next-line))
+;; Set font
+(setq doom-font (font-spec :family "Comic Code Ligatures" :size 14))
 
-(map! (:after evil
-              (:prefix "g"
-               :nv "h" #'evil-beginning-of-line
-               :nv "l" #'evil-end-of-line
-               :nv "a" #'evil-switch-to-windows-last-buffer
-               :nv "e" #'end-of-buffer)))
+;; Set theme
+(setq doom-theme 'gruber-darker)
 
-(map! :leader
-      :after evil
-      :nv "k" #'lsp-ui-doc-show
-      :nv "d" #'neotree-toggle
-      :nv "x" #'counsel-M-x)
+;; Add a scroll offset
+(setq scroll-margin 7)
 
-(map! :leader
-      :after evil
-      :prefix "w"
-      :nv "o" #'delete-other-windows)
+;; Relative line numbers
+(setq display-line-numbers-type 'relative)
+
+;; Add column-fill-indicator in prog-mode
+(add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)

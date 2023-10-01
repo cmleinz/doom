@@ -20,5 +20,6 @@
   (interactive "P")
   (neo-buffer--execute arg 'neo-open-file-hide 'neo-open-dir))
 
-(map! :map neotree-mode-map
-      :nv "RET" #'neotree-enter-hide)
+(map! (:map neotree-mode-map
+       :nv "RET" #'neotree-enter-hide
+       :nv "n" #'neotree-create-node))

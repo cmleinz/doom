@@ -22,4 +22,6 @@
 
 (map! (:map neotree-mode-map
        :nv "RET" #'neotree-enter-hide
-       :nv "n" #'neotree-create-node))
+       :nv "n" #'neotree-create-node
+       :nv "g" #'neotree-dir
+       :nv "o" #'neotree-open-file-in-system-application))

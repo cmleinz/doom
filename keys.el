@@ -22,3 +22,8 @@
       :after evil
       :prefix "w"
       :nv "o" #'delete-other-windows)
+
+;; Dired navigation
+(map! (:map 'dired-mode-map
+       :nv "h" 'dired-up-directory
+       :nv "l" 'dired-find-file))

@@ -16,6 +16,7 @@
       :after evil
       :nv "k" #'lsp-ui-doc-show
       :nv "d" #'neotree-toggle
+      :nv "v" #'vterm
       :nv "x" #'counsel-M-x)
 
 (map! :leader

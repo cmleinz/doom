@@ -91,3 +91,8 @@
 
 ;; Add column-fill-indicator in prog-mode
 (add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
+(setq display-fill-column-indicator-column 100)
+(setq-default display-fill-column-indicator-column 100)
+
+;; Flyspell in prog mode
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)

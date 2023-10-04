@@ -3,7 +3,8 @@
 ;; Includes keybindings which are NOT mode specific. Bindings which are specific to modes
 ;; are kept in the file with the package config.
 (map! (:after evil
-       :nv "C" #'evil-mc-make-cursor-move-next-line))
+       :nv "C" #'evil-mc-make-cursor-move-next-line
+       :nv "U" #'evil-redo))
 
 (map! (:after evil
               (:prefix "g"

@@ -25,6 +25,11 @@
       :prefix "w"
       :nv "o" #'delete-other-windows)
 
+(map! :leader
+      :after evil
+      :prefix "c"
+      :nv "X" #'lsp-treemacs-errors-list)
+
 ;; Dired navigation
 (map! (:map 'dired-mode-map
        :nv "h" 'dired-up-directory

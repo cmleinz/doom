@@ -82,7 +82,7 @@
 (setq doom-font (font-spec :family "Comic Code Ligatures" :size 14))
 
 ;; Set theme
-(setq doom-theme 'gruber-darker)
+(setq doom-theme 'doom-badger)
 
 ;; Add a scroll offset
 (setq scroll-margin 7)
@@ -90,10 +90,16 @@
 ;; Relative line numbers
 (setq display-line-numbers-type 'relative)
 
-;; Add column-fill-indicator in prog-mode
-(add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
 (setq display-fill-column-indicator-column 100)
 (setq-default display-fill-column-indicator-column 100)
 
-;; Flyspell in prog mode
+;; Add spellcheck and column-fill-indicator in prog-mode
+(add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
+;; Add spellcheck column-fill-indicator in markdown
+(add-hook 'markdown-mode-hook 'display-fill-column-indicator-mode)
+(add-hook 'markdown-mode-hook 'flyspell-mode)
+
+
+(setq company-idle-delay 0.1)

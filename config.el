@@ -80,7 +80,7 @@
 
 ;; Set font
 (setq doom-font (font-spec :family "Comic Code Ligatures" :size 14))
-
+(setq default-text-properties '(line-spacing 0.25 line-height 1.25))
 ;; Set theme
 (setq doom-theme 'doom-badger)
 

@@ -80,7 +80,7 @@
 
 ;; Set font
 (setq doom-font (font-spec :family "Comic Code Ligatures" :size 14))
-(setq default-text-properties '(line-spacing 0.25 line-height 1.25))
+;; (setq default-text-properties '(line-spacing 0.25 line-height 1.25))
 ;; Set theme
 (setq doom-theme 'doom-badger)
 
@@ -103,11 +103,3 @@
 
 
 (setq company-idle-delay 0.1)
-
-(use-package! copilot
-  :hook (prog-mode . copilot-mode)
-  :bind (:map copilot-completion-map
-              ("<tab>" . 'copilot-accept-completion)
-              ("TAB" . 'copilot-accept-completion)
-              ("C-TAB" . 'copilot-accept-completion-by-word)
-              ("C-<tab>" . 'copilot-accept-completion-by-word)))

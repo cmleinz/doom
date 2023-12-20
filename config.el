@@ -77,12 +77,13 @@
 
 (load! "neotree.el")
 (load! "rustic.el")
+(load! "copilot.el")
 
 ;; Set font
 (setq doom-font (font-spec :family "Comic Code Ligatures" :size 14))
 ;; (setq default-text-properties '(line-spacing 0.25 line-height 1.25))
 ;; Set theme
-(setq doom-theme 'doom-badger)
+(setq doom-theme 'modus-vivendi)
 
 ;; Add a scroll offset
 (setq scroll-margin 7)
@@ -100,6 +101,5 @@
 ;; Add spellcheck column-fill-indicator in markdown
 (add-hook 'markdown-mode-hook 'display-fill-column-indicator-mode)
 (add-hook 'markdown-mode-hook 'flyspell-mode)
-
 
 (setq company-idle-delay 0.1)

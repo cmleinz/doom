@@ -84,6 +84,7 @@
 ;; (setq default-text-properties '(line-spacing 0.25 line-height 1.25))
 ;; Set theme
 (setq doom-theme 'modus-vivendi)
+(setq modus-themes-mode-line '(borderless))
 
 ;; Add a scroll offset
 (setq scroll-margin 7)

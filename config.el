@@ -77,7 +77,7 @@
 
 (load! "neotree.el")
 (load! "rustic.el")
-(load! "copilot.el")
+;; (load! "copilot.el")
 
 ;; Set font
 (setq doom-font (font-spec :family "Comic Code Ligatures" :size 14))
